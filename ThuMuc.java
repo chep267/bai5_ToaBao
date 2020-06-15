@@ -17,8 +17,8 @@ public class ThuMuc extends file{
 
             for (File child : children) {
                 // Đệ quy (Recursive)
-                this.mo(child);
                 this.run(child);
+                this.mo(child);         
             }
         }
     }
