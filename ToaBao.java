@@ -26,9 +26,26 @@ public class ToaBao {
                 System.out.print("\n\tChuc vu: "+ chucvu[i]);
             }else if(loaiNV[i]==1){
                 System.out.print("\n\tLoai nhan vien : nha bao");
+                System.out.print("\n\tSo bai dang: "+ sobaidang[i]);
             }
         }
+    }
 
+    public void innv(int n){
+        for (int i = 0; i < n; i++) {
+            if(loaiNV[i]==2){
+                System.out.print("\n\tHo ten: "+tenNV[i]);
+                System.out.print("\n\tChuc vu: "+ chucvu[i]);
+            }
+        }
+    }
+    public void innb(int n){
+        for (int i = 0; i < n; i++) {
+            if(loaiNV[i]==1){
+                System.out.print("\n\tHo ten: "+tenNV[i]);
+                System.out.print("\n\tSo bai dang: "+ sobaidang[i]);
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -72,8 +89,11 @@ public class ToaBao {
             }
         }
 
-        System.out.print("\nDanh sach nhan vien: ");
+        System.out.print("\nIn the nhan vien: ");
         a.intheNV(n);
-
+        System.out.print("\nDanh sach nhan vien: ");
+        a.innv(n);
+        System.out.print("\nDanh sach nha bao: ");
+        a.innb(n);
     }
 }
