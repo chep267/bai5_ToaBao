@@ -86,18 +86,26 @@ public class ToaBao {
         System.out.print("\nLoai nhan vien la: \n\t\t1. Nha bao\n\t\t2.Nhan vien hanh chinh\n\t\tBan chon:  ");
         int cv = sc.nextInt();
         bodem = sc.nextLine();
-        for (int i = 0; i < n; i++) {
-            if(tenNV[i] == ten && loaiNV[i] == cv){
-                for (i = i; i < n-1; i++) {
-                    for (int j = i+1; j < n; j++) {
-                        tenNV[i] = tenNV[j];
-                        loaiNV[i] = loaiNV[j];
+        int dem =0;
+        do {
+            for (int i = 0; i < n; i++) {
+                if(tenNV[i].equals(ten) && loaiNV[i] == cv){
+                    dem++;
+                    for (i = i; i < n-1; i++) {
+                        tenNV[i] = tenNV[i+1];
+                        loaiNV[i] = loaiNV[i+1];
+                        sobaidang[i] = sobaidang[i+1];
+                        chucvu[i] = chucvu[i+1];
                     }
+                    break;
                 }
-                break;
             }
-        }
-        System.out.print("\nDone! Ban da xoa nhan vien "+ten);
+            if(dem==0){
+                System.out.print("\nKhong co nhan vien ban vua nhap! Xin hay chon lai! ");
+            }else{
+                System.out.print("\nDone! Ban da xoa nhan vien "+ten);
+            }
+        }while (dem==0);
     }
 
 
@@ -137,10 +145,12 @@ public class ToaBao {
                 System.out.print("\n\tNhap so bai viet: ");
                 a.sobaidang[i]= sc.nextInt();
                 bodem = sc.nextLine();
+                a.chucvu[i] = "khong";
             }
             if(d==2){
                 System.out.print("\n\tNhap chuc vu: ");
                 a.chucvu[i]= sc.nextLine();
+                a.sobaidang[i] = 0;
             }
         }
         System.out.print("\n---------------------------\n");
