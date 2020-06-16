@@ -80,14 +80,16 @@ public class ToaBao {
     }
 
     public void xoa(int n){
+        System.out.print("\nDanh sach nv hien tai: ");
+        intheNV(n);
         Scanner sc = new Scanner(System.in);
-        System.out.print("\nNhap ten nhan vien can xoa: ");
-        String ten = sc.nextLine(); String bodem;
-        System.out.print("\nLoai nhan vien la: \n\t\t1. Nha bao\n\t\t2.Nhan vien hanh chinh\n\t\tBan chon:  ");
-        int cv = sc.nextInt();
-        bodem = sc.nextLine();
         int dem =0;
         do {
+            System.out.print("\nNhap ten nhan vien can xoa: ");
+            String ten = sc.nextLine(); String bodem;
+            System.out.print("\nLoai nhan vien la: \n\t\t1. Nha bao\n\t\t2.Nhan vien hanh chinh\n\t\tBan chon:  ");
+            int cv = sc.nextInt();
+            bodem = sc.nextLine();
             for (int i = 0; i < n; i++) {
                 if(tenNV[i].equals(ten) && loaiNV[i] == cv){
                     dem++;
@@ -106,6 +108,14 @@ public class ToaBao {
                 System.out.print("\nDone! Ban da xoa nhan vien "+ten);
             }
         }while (dem==0);
+    }
+
+    public void chuyen(int n){
+        System.out.print("\nDanh sach nv hien tai: ");
+        innb(n);
+        innv(n);
+        System.out.print("\nBan muon chuyen vi tri nao: ");
+
     }
 
 
@@ -160,13 +170,16 @@ public class ToaBao {
         a.innv(n);
         System.out.print("\nDanh sach nha bao: ");
         a.innb(n);
-        System.out.print("\n---------------------------\n");
+
+
+        System.out.print("\n\n---------------------------\n");
         a.them(n); n++;
-        System.out.print("\nIn the nhan vien: ");
+        System.out.print("\nDanh sach moi: ");
         a.intheNV(n);
-        System.out.print("\n---------------------------\n");
+
+        System.out.print("\n\n---------------------------\n");
         a.xoa(n); n--;
-        System.out.print("\nIn the nhan vien: ");
+        System.out.print("\nDanh sach moi: ");
         a.intheNV(n);
     }
 }
