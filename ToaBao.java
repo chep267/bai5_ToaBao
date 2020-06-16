@@ -112,10 +112,32 @@ public class ToaBao {
 
     public void chuyen(int n){
         System.out.print("\nDanh sach nv hien tai: ");
-        innb(n);
-        innv(n);
+        intheNV(n);
         System.out.print("\nBan muon chuyen vi tri nao: ");
+        Scanner sc = new Scanner(System.in);
+        int dem =0; int vt;
+        do {
+            System.out.print("\nNhap vi tri can chuyen: ");
+            vt = sc.nextInt();
+            String bodem = sc.nextLine();
 
+            if(vt<=0 || vt>n) {
+                System.out.print("\nK co vi tri da chon! Xin hay chon lai! ");
+            }else {
+                vt--;
+                if(loaiNV[vt]==1) {
+                    loaiNV[vt] = 2;
+                    sobaidang[vt] = 0;
+                    chucvu[vt] = "nha vien hoc viec";
+                }else if(loaiNV[vt]==2) {
+                    loaiNV[vt] = 1;
+                    chucvu[vt] = "nha bao";
+                    sobaidang[vt] = 0;
+                }
+                System.out.print("\nBan da chuyen thanh cong! \nDanh sach moi la: ");
+                intheNV(n);
+            }
+        }while (vt<=0 || vt>n);
     }
 
 
@@ -181,5 +203,9 @@ public class ToaBao {
         a.xoa(n); n--;
         System.out.print("\nDanh sach moi: ");
         a.intheNV(n);
+
+
+        System.out.print("\n\n---------------------------\n");
+        a.chuyen(n);
     }
 }
