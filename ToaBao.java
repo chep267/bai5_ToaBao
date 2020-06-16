@@ -47,6 +47,61 @@ public class ToaBao {
             }
         }
     }
+    public void them(int n){
+        Scanner sc = new Scanner(System.in);
+        int d; String bodem;
+        System.out.print("\nNhap thong tin nhan vien moi: ");
+        System.out.print("\n\tNhap ho ten: ");
+        tenNV[n]= sc.nextLine();
+        do{
+            System.out.print("\n\tChon loai nv: \n\t\t1. Nha bao\n\t\t2.Nhan vien hanh chinh\n\t\tBan chon:  ");
+            d = sc.nextInt();
+            bodem = sc.nextLine();
+            switch (d){
+                case 1:
+                    loaiNV[n] = d;
+                case 2:
+                    loaiNV[n] = d;
+            }
+            if (d!=1 && d!=2){
+                System.out.print("\nChuc vu khong co! Hay chon lai!");
+            }
+        }while (d!=1 && d!=2);
+
+        if(d==1){
+            System.out.print("\n\tNhap so bai viet: ");
+            sobaidang[n]= sc.nextInt();
+            bodem = sc.nextLine();
+        }
+        if(d==2){
+            System.out.print("\n\tNhap chuc vu: ");
+            chucvu[n]= sc.nextLine();
+        }
+    }
+
+    public void xoa(int n){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\nNhap ten nhan vien can xoa: ");
+        String ten = sc.nextLine(); String bodem;
+        System.out.print("\nLoai nhan vien la: \n\t\t1. Nha bao\n\t\t2.Nhan vien hanh chinh\n\t\tBan chon:  ");
+        int cv = sc.nextInt();
+        bodem = sc.nextLine();
+        for (int i = 0; i < n; i++) {
+            if(tenNV[i] == ten && loaiNV[i] == cv){
+                for (i = i; i < n-1; i++) {
+                    for (int j = i+1; j < n; j++) {
+                        tenNV[i] = tenNV[j];
+                        loaiNV[i] = loaiNV[j];
+                    }
+                }
+                break;
+            }
+        }
+        System.out.print("\nDone! Ban da xoa nhan vien "+ten);
+    }
+
+
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -88,12 +143,20 @@ public class ToaBao {
                 a.chucvu[i]= sc.nextLine();
             }
         }
-
+        System.out.print("\n---------------------------\n");
         System.out.print("\nIn the nhan vien: ");
         a.intheNV(n);
         System.out.print("\nDanh sach nhan vien: ");
         a.innv(n);
         System.out.print("\nDanh sach nha bao: ");
         a.innb(n);
+        System.out.print("\n---------------------------\n");
+        a.them(n); n++;
+        System.out.print("\nIn the nhan vien: ");
+        a.intheNV(n);
+        System.out.print("\n---------------------------\n");
+        a.xoa(n); n--;
+        System.out.print("\nIn the nhan vien: ");
+        a.intheNV(n);
     }
 }
