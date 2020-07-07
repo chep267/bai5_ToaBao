@@ -1,0 +1,13 @@
+package ToaBao;
+
+public class NhanVien {
+    String name; //ten NV
+    int age; //tuoi
+    int phone; // so dien thoai
+
+    public void inThe(){
+        System.out.print("\nNhan vien: "+name);
+        System.out.print("\nNhan vien: "+age);
+        System.out.print("\nNhan vien: "+phone);
+    }
+}
