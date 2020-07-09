@@ -2,18 +2,17 @@ package ToaBao;
 
 class NhaBao extends NhanVien{
     int sobd;
-    
+
     NhaBao(){}
-    NhaBao (String ten, int tuoi, int sdt){
-        name = ten;
-        age = tuoi;
-        phone = sdt;
+    NhaBao (String ten, int sbd){
+        super(ten);
+        sobd = sbd;
     }
 
     @Override
     public void inThe() {
         super.inThe();
-        System.out.print("\nSo bai dang: "+sobd);
+        System.out.print("\n\tSo bai dang: "+sobd);
     }
 
 
