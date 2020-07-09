@@ -1,12 +1,15 @@
 package ToaBao;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.*;
 
 public class ToaBao extends NhanVien{
     String tenTB; //ten toa bao
     int n; //so nhan vien
-    NhanVien[] ds = new NhanVien[1000];
+    ArrayList<NhanVien> ds = new ArrayList<NhanVien>(); // Danh sach nhan vien
+
+    ToaBao(){}
     ToaBao (String st, int n1){
         tenTB = st;
         n = n1;
@@ -50,56 +53,35 @@ public class ToaBao extends NhanVien{
 
 
 
-//    //Sa thai:
-//    public void saThaiNhanVien(int m){
-//        Scanner sc = new Scanner(System.in);
-//        int dem =0;
-//        do {
-//            System.out.print("\nNhap ten nhan vien can xoa: ");
-//            String ten = sc.nextLine(); String bodem;
-//
-//            for (int i = 0; i < m; i++) {
-//                if(ds[i].name.equals(ten)){
-//                    dem++;
-//                    for (i = i; i < m-1; i++) {
-//                        ds[i] = ds[i+1];
-//                    }
-//                    break;
-//                }
-//            }
-//            if(dem==0){
-//                System.out.print("\nKhong co nhan vien ban vua nhap! Xin hay chon lai! ");
-//            }else{
-//                System.out.print("\nDone! Ban da xoa nhan vien "+ten);
-//            }
-//        }while (dem==0);
-//    }
-//
-//
-//    //Chuyen, bo sung:
-//    public void chuyen(int n){
-//        Scanner sc = new Scanner(System.in);
-//        int dem =0; int vt;  String bodem;
-//        do {
-//            System.out.print("\nNhap vi tri can chuyen: ");
-//            vt = sc.nextInt();
-//            bodem = sc.nextLine();
-//
-//            if(vt<=0 || vt>n) {
-//                System.out.print("\nKhong co vi tri da chon! Xin hay chon lai! ");
-//            }else {
-//
-//            }
-//        }while (vt<=0 || vt>n);
-//    }
+    //Sa thai:
+    public ArrayList<NhanVien> saThaiNhanVien(ArrayList<NhanVien> a){
+        Scanner sc = new Scanner(System.in);
+        int dem =0; String bodem;
+        do {
+            System.out.print("\nNhap ten nhan vien can xoa: ");
+            String ten = sc.nextLine();
+            for (int i = 0; i < a.size(); i++) {
+                if(a.get(i).name.equals(ten)){
+                    dem++;
+                    a.remove(i);
+                    break;
+                }
+            }
+            if(dem==0){
+                System.out.print("\nKhong co nhan vien ban vua nhap! Xin hay chon lai! ");
+            }else{
+                System.out.print("\nDone! Ban da xoa nhan vien "+ten);
+            }
+        }while (dem==0);
+        return a;
+    }
 
-//    //In danh sach toan bo:
-//    public void inDS( int n){
-//        for(int i=0; i<n; i++){
-//            System.out.print("\nNhan vien : "+(i+1));
-//            ds[i].inThe();
-//        }
-//    }
+
+    // bo sung:
+    public void bosung(ArrayList<NhanVien> a){
+        a.add(themNV());
+    }
+
 
     //Thong tin toa bao:
     public void thongtin(int n){
@@ -107,9 +89,16 @@ public class ToaBao extends NhanVien{
         System.out.print("\nSo nhan vien: "+n );
         for(int i=0; i<n; i++){
             System.out.print("\nNhan vien : "+(i+1));
-            ds[i].inThe();
+            ds.get(i).inThe();
         }
     }
+
+    //In danh sach nha bao:
+    public void inNhaBao(ArrayList<NhanVien> a){
+
+    }
+
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -122,16 +111,14 @@ public class ToaBao extends NhanVien{
         n = sc.nextInt();
 
         ToaBao toabao = new ToaBao(tb,n);
-        for(int i=0; i<n; i++){
-            toabao.ds[i] = toabao.themNV();
+        for(int i=0; i<n; i=i+2){
+            toabao.ds.add(new NhaBao("Dong", 4));
+            toabao.ds.add(new NhanVienVanPhong("Nam", "Chuyen vien"));
         }
-
         toabao.thongtin(n);
-
-
-
-//        toabao.ds[n++] = toabao.themNV();
-//
-//        toabao.thongtin(n);
+        
+        //sa thai:
+        toabao.ds = toabao.saThaiNhanVien(toabao.ds); n--;
+        toabao.thongtin(n);
     }
 }
