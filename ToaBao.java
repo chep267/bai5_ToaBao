@@ -109,19 +109,11 @@ public class ToaBao extends NhanVien{
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String tb; String bodem;
+        String bodem;
 
-        //Nhap toa bao:
-        System.out.print("\nNhap ten toa bao: ");
-        tb = sc.nextLine();
-//        System.out.print("\nNhap so nhan vien: ");
-//        n = sc.nextInt();
 
-        ToaBao toabao = new ToaBao(tb);
-//        for(int i=0; i<toabao.ds.size(); i=i+2){
-//            toabao.ds.add(new NhaBao("Dong", 4));
-//            toabao.ds.add(new NhanVienVanPhong("Nam", "Chuyen vien"));
-//        }
+
+        ToaBao toabao = new ToaBao("Dan tri");
         toabao.thongtin(toabao.ds.size());
 
         System.out.print("\n-----------------------\n");
