@@ -1,13 +1,13 @@
 package ToaBao;
 
-public class NhanVien {
+public abstract class NhanVien {
     String name; //ten NV
-    int age; //tuoi
-    int phone; // so dien thoai
 
+    NhanVien(){}
+    NhanVien(String st){
+        name = st;
+    }
     public void inThe(){
-        System.out.print("\nNhan vien: "+name);
-        System.out.print("\nNhan vien: "+age);
-        System.out.print("\nNhan vien: "+phone);
+        System.out.print("\n\tHo ten: "+name);
     }
 }
