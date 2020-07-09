@@ -121,12 +121,17 @@ public class ToaBao extends NhanVien{
         System.out.print("\nNhap so nhan vien: ");
         n = sc.nextInt();
 
-
         ToaBao toabao = new ToaBao(tb,n);
+        for(int i=0; i<n; i++){
+            toabao.ds[i] = toabao.themNV();
+        }
+
         toabao.thongtin(n);
 
-        toabao.ds[n++] = toabao.themNV();
 
-        toabao.thongtin(n);
+
+//        toabao.ds[n++] = toabao.themNV();
+//
+//        toabao.thongtin(n);
     }
 }
