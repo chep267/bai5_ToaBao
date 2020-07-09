@@ -1,4 +1,4 @@
-package ToaBao;
+package toa_bao;
 
 import java.util.ArrayList;
 import java.util.Scanner;
