@@ -6,13 +6,12 @@ import java.lang.*;
 
 public class ToaBao extends NhanVien{
     String tenTB; //ten toa bao
-    int n; //so nhan vien
+
     ArrayList<NhanVien> ds = new ArrayList<NhanVien>(); // Danh sach nhan vien
 
     ToaBao(){}
-    ToaBao (String st, int n1){
+    ToaBao (String st){
         tenTB = st;
-        n = n1;
     }
 
 
@@ -56,23 +55,31 @@ public class ToaBao extends NhanVien{
     //Sa thai:
     public ArrayList<NhanVien> saThaiNhanVien(ArrayList<NhanVien> a){
         Scanner sc = new Scanner(System.in);
-        int dem =0; String bodem;
+        int dem =0; String bodem; String ten; int vt=0;
         do {
             System.out.print("\nNhap ten nhan vien can xoa: ");
-            String ten = sc.nextLine();
+            ten = sc.nextLine();
             for (int i = 0; i < a.size(); i++) {
                 if(a.get(i).name.equals(ten)){
                     dem++;
-                    a.remove(i);
-                    break;
                 }
             }
             if(dem==0){
                 System.out.print("\nKhong co nhan vien ban vua nhap! Xin hay chon lai! ");
             }else{
-                System.out.print("\nDone! Ban da xoa nhan vien "+ten);
+                System.out.print("\nCo "+dem+" nhan vien ten "+ten+" o cac vi tri thu ");
+                for (int i = 0; i < a.size(); i++) {
+                    if(a.get(i).name.equals(ten)){
+                        System.out.print(" "+(i+1));
+                    }
+                }
+                System.out.print("\nBan muon xoa vi tri nao? ");
+                vt = sc.nextInt();
+                a.remove(vt-1);
+                System.out.print("\nDone! Ban da xoa nhan vien thu "+vt+" :"+ten);
             }
         }while (dem==0);
+
         return a;
     }
 
@@ -102,23 +109,43 @@ public class ToaBao extends NhanVien{
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String tb; int n; String bodem;
+        String tb; String bodem;
 
         //Nhap toa bao:
         System.out.print("\nNhap ten toa bao: ");
         tb = sc.nextLine();
-        System.out.print("\nNhap so nhan vien: ");
-        n = sc.nextInt();
+//        System.out.print("\nNhap so nhan vien: ");
+//        n = sc.nextInt();
 
-        ToaBao toabao = new ToaBao(tb,n);
-        for(int i=0; i<n; i=i+2){
-            toabao.ds.add(new NhaBao("Dong", 4));
-            toabao.ds.add(new NhanVienVanPhong("Nam", "Chuyen vien"));
+        ToaBao toabao = new ToaBao(tb);
+//        for(int i=0; i<toabao.ds.size(); i=i+2){
+//            toabao.ds.add(new NhaBao("Dong", 4));
+//            toabao.ds.add(new NhanVienVanPhong("Nam", "Chuyen vien"));
+//        }
+        toabao.thongtin(toabao.ds.size());
+
+        System.out.print("\n-----------------------\n");
+//        //bo sung:
+//        int n=0;
+//        System.out.print("\nNhap so nhan vien muon them: ");
+//        n = sc.nextInt(); bodem = sc.nextLine();
+//        for (int i=0; i<n; i++){
+//            toabao.bosung(toabao.ds);
+//        }
+//        toabao.thongtin(toabao.ds.size());
+
+        for (int i=0; i<6; i=i+2){
+            toabao.ds.add( new NhanVienVanPhong("nam","chuyen vien"));
+            toabao.ds.add( new NhaBao("ha",i));
         }
-        toabao.thongtin(n);
-        
+        toabao.thongtin(toabao.ds.size());
+
+
+        System.out.print("\n-----------------------\n");
         //sa thai:
-        toabao.ds = toabao.saThaiNhanVien(toabao.ds); n--;
-        toabao.thongtin(n);
+        toabao.ds = toabao.saThaiNhanVien(toabao.ds);
+        toabao.thongtin(toabao.ds.size());
+
+
     }
 }
