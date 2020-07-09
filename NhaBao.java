@@ -1,7 +1,7 @@
 package ToaBao;
 
 class NhaBao extends NhanVien{
-    int sobd;
+    int sobd; // so bai dang cua nha bao
 
     NhaBao(){}
     NhaBao (String ten, int sbd){
@@ -12,11 +12,12 @@ class NhaBao extends NhanVien{
     @Override
     public void inThe() {
         super.inThe();
+        System.out.print("\n\tLoai nhan vien: Nha bao");
         System.out.print("\n\tSo bai dang: "+sobd);
     }
 
 
     // get, set:
-    public int get() {return sobd;}
-    public void set( int so) {sobd = so;}
+    public int get_SoBaiDang() {return sobd;}
+    public void set_SoBaiDang( int so) {sobd = so;}
 }
