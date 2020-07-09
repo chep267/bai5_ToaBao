@@ -1,4 +1,4 @@
-package ToaBao;
+package toa_bao;
 
 public abstract class NhanVien {
     String name; //ten NV
