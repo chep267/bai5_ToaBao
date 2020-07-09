@@ -1,4 +1,4 @@
-package ToaBao;
+package toa_bao;
 
 class NhanVienVanPhong extends NhanVien{
     String chucvu; //Chuc vu cua nhan vien
