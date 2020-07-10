@@ -100,11 +100,36 @@ public class ToaBao extends NhanVien{
         }
     }
 
+
     //In danh sach nha bao:
     public void inNhaBao(ArrayList<NhanVien> a){
+        System.out.print("\nDanh sach nha bao la: ");
+        for(NhanVien d : a){
+            try{
+                if( ((NhaBao) d).get_SoBaiDang() >=0){
+                    d.inThe();
+                }
+            }catch (Exception e){
+                continue;
+            }
 
+        }
     }
 
+    //In danh sach nhan vien:
+    public void inNhanVien(ArrayList<NhanVien> a){
+        System.out.print("\nDanh sach nhan vien van phong la: ");
+        for(NhanVien d : a){
+            try{
+                if( ((NhanVienVanPhong) d).get_ChucVu() != null){
+                    d.inThe();
+                }
+            }catch (Exception e){
+                continue;
+            }
+
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -133,11 +158,15 @@ public class ToaBao extends NhanVien{
         toabao.thongtin(toabao.ds.size());
 
 
-        System.out.print("\n-----------------------\n");
-        //sa thai:
-        toabao.ds = toabao.saThaiNhanVien(toabao.ds);
-        toabao.thongtin(toabao.ds.size());
+       System.out.print("\n-----------------------\n");
+       //sa thai:
+       toabao.ds = toabao.saThaiNhanVien(toabao.ds);
+       toabao.thongtin(toabao.ds.size());
 
+        System.out.print("\n-----------------------\n");
+        toabao.inNhaBao(toabao.ds);
+        System.out.print("\n-----------------------\n");
+        toabao.inNhanVien(toabao.ds);
 
     }
 }
