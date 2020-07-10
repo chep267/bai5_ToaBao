@@ -53,14 +53,14 @@ public class ToaBao extends NhanVien{
 
 
     //Sa thai:
-    public ArrayList<NhanVien> saThaiNhanVien(ArrayList<NhanVien> a){
+    public ArrayList<NhanVien> saThaiNhanVien(){
         Scanner sc = new Scanner(System.in);
         int dem =0; String bodem; String ten; int vt=0;
         do {
             System.out.print("\nNhap ten nhan vien can xoa: ");
             ten = sc.nextLine();
-            for (int i = 0; i < a.size(); i++) {
-                if(a.get(i).name.equals(ten)){
+            for (int i = 0; i < ds.size(); i++) {
+                if(ds.get(i).name.equals(ten)){
                     dem++;
                 }
             }
@@ -68,25 +68,25 @@ public class ToaBao extends NhanVien{
                 System.out.print("\nKhong co nhan vien ban vua nhap! Xin hay chon lai! ");
             }else{
                 System.out.print("\nCo "+dem+" nhan vien ten "+ten+" o cac vi tri thu ");
-                for (int i = 0; i < a.size(); i++) {
-                    if(a.get(i).name.equals(ten)){
+                for (int i = 0; i < ds.size(); i++) {
+                    if(ds.get(i).name.equals(ten)){
                         System.out.print(" "+(i+1));
                     }
                 }
                 System.out.print("\nBan muon xoa vi tri nao? ");
                 vt = sc.nextInt();
-                a.remove(vt-1);
+                ds.remove(vt-1);
                 System.out.print("\nDone! Ban da xoa nhan vien thu "+vt+" :"+ten);
             }
         }while (dem==0);
 
-        return a;
+        return ds;
     }
 
 
     // bo sung:
-    public void bosung(ArrayList<NhanVien> a){
-        a.add(themNV());
+    public void bosung(){
+        ds.add(themNV());
     }
 
 
@@ -112,7 +112,7 @@ public class ToaBao extends NhanVien{
             }
         }
     }
-    
+
     //In danh sach nhan vien:
     public void inNhanVien(){
         System.out.print("\nDanh sach nhan vien van phong la: ");
@@ -152,10 +152,10 @@ public class ToaBao extends NhanVien{
         toabao.thongtin(toabao.ds.size());
 
 
-//        System.out.print("\n-----------------------\n");
-//        //sa thai:
-//        toabao.ds = toabao.saThaiNhanVien(toabao.ds);
-//        toabao.thongtin(toabao.ds.size());
+       System.out.print("\n-----------------------\n");
+       //sa thai:
+       toabao.ds = toabao.saThaiNhanVien(toabao.ds);
+       toabao.thongtin(toabao.ds.size());
 
         //In Nha bao va nhan vien rieng:
         System.out.print("\n-----------------------\n");
