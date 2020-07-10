@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.*;
 
-public class ToaBao extends NhanVien{
+public class ToaBao {
     String tenTB; //ten toa bao
 
     ArrayList<NhanVien> ds = new ArrayList<NhanVien>(); // Danh sach nhan vien
@@ -105,10 +105,10 @@ public class ToaBao extends NhanVien{
 
 
     //Thong tin toa bao:
-    public void thongtin(int n){
+    public void thongtin(){
         System.out.print("\nTen toa bao : "+tenTB );
-        System.out.print("\nSo nhan vien: "+n );
-        for(int i=0; i<n; i++){
+        System.out.print("\nSo nhan vien: "+ds.size() );
+        for(int i=0; i<ds.size(); i++){
             System.out.print("\nNhan vien : "+(i+1));
             ds.get(i).inThe();
         }
@@ -145,9 +145,9 @@ public class ToaBao extends NhanVien{
         String bodem;
 
 
-
+        //Khoi tao toa bao moi:
         ToaBao toabao = new ToaBao("Dan tri");
-        toabao.thongtin(toabao.ds.size());
+        toabao.thongtin();
 
         System.out.print("\n-----------------------\n");
 //        //bo sung:
@@ -158,18 +158,18 @@ public class ToaBao extends NhanVien{
 //            toabao.bosung(toabao.ds);
 //        }
 //        toabao.thongtin(toabao.ds.size());
-
+        //Khoi tao nhan vien:
         for (int i=0; i<6; i=i+2){
             toabao.ds.add( new NhanVienVanPhong("nam","chuyen vien"));
             toabao.ds.add( new NhaBao("ha",i));
         }
-        toabao.thongtin(toabao.ds.size());
+        toabao.thongtin();
 
 
         System.out.print("\n-----------------------\n");
         //sa thai:
         toabao.ds = toabao.saThaiNhanVien();
-        toabao.thongtin(toabao.ds.size());
+        toabao.thongtin();
 
         //In Nha bao va nhan vien rieng:
         System.out.print("\n-----------------------\n");
