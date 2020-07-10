@@ -73,8 +73,22 @@ public class ToaBao extends NhanVien{
                         System.out.print(" "+(i+1));
                     }
                 }
-                System.out.print("\nBan muon xoa vi tri nao? ");
-                vt = sc.nextInt();
+                boolean flag = false;
+                do{
+                    System.out.print("\nBan muon xoa vi tri nao? ");
+                    vt = sc.nextInt();
+                    for (int i = 0; i < ds.size(); i++) {
+                        if(ds.get(i).name.equals(ten)){
+                            if(vt==i+1){
+                                flag = true;
+                            }
+                        }
+                    }
+                    if(flag == false){
+                        System.out.print("\nkhong co, hay chon lai! ");
+                    }
+
+                }while (flag == false);
                 ds.remove(vt-1);
                 System.out.print("\nDone! Ban da xoa nhan vien thu "+vt+" :"+ten);
             }
@@ -152,10 +166,10 @@ public class ToaBao extends NhanVien{
         toabao.thongtin(toabao.ds.size());
 
 
-       System.out.print("\n-----------------------\n");
-       //sa thai:
-       toabao.ds = toabao.saThaiNhanVien(toabao.ds);
-       toabao.thongtin(toabao.ds.size());
+        System.out.print("\n-----------------------\n");
+        //sa thai:
+        toabao.ds = toabao.saThaiNhanVien();
+        toabao.thongtin(toabao.ds.size());
 
         //In Nha bao va nhan vien rieng:
         System.out.print("\n-----------------------\n");
