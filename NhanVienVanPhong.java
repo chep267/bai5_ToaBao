@@ -1,5 +1,4 @@
 package toa_bao;
-
 class NhanVienVanPhong extends NhanVien{
     String chucvu; //Chuc vu cua nhan vien
 
@@ -16,8 +15,13 @@ class NhanVienVanPhong extends NhanVien{
         System.out.print("\n\tChuc vu: "+chucvu);
     }
 
+    public void inThongTin() {
+        super.inThe();
+        System.out.print("\n\tChuc vu: "+chucvu);
+    }
 
     // get, set:
-    public String get_ChucVu() {return chucvu;}
-    public void set_ChucVu( String cv) {chucvu = cv;}
+    public String getChucVu() {return chucvu;}
+    public void setChucVu( String cv) {chucvu = cv;}
+
 }
