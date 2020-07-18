@@ -16,6 +16,7 @@ public class ToaBao {
 
 
     //Them Nhan vien:
+    //tu tao:
     public NhanVien themNV(){
         Scanner sc = new Scanner(System.in);
         String bodem;
@@ -50,10 +51,16 @@ public class ToaBao {
         return null;
     }
 
+    //them auto:
+    void themNV(NhanVien a){
+        ds.add(a);
+    }
+
+
 
 
     //Sa thai:
-    public ArrayList<NhanVien> saThaiNhanVien(){
+    void saThaiNhanVien(){
         Scanner sc = new Scanner(System.in);
         int dem =0; String bodem; String ten; int vt=0;
         do {
@@ -93,8 +100,6 @@ public class ToaBao {
                 System.out.print("\nDone! Ban da xoa nhan vien thu "+vt+" :"+ten);
             }
         }while (dem==0);
-
-        return ds;
     }
 
 
@@ -142,33 +147,26 @@ public class ToaBao {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String bodem;
-
 
         //Khoi tao toa bao moi:
         ToaBao toabao = new ToaBao("Dan tri");
         toabao.thongtin();
 
         System.out.print("\n-----------------------\n");
-//        //bo sung:
-//        int n=0;
-//        System.out.print("\nNhap so nhan vien muon them: ");
-//        n = sc.nextInt(); bodem = sc.nextLine();
-//        for (int i=0; i<n; i++){
-//            toabao.bosung(toabao.ds);
-//        }
-//        toabao.thongtin(toabao.ds.size());
+
+
         //Khoi tao nhan vien:
         for (int i=0; i<6; i=i+2){
-            toabao.ds.add( new NhanVienVanPhong("nam","chuyen vien"));
-            toabao.ds.add( new NhaBao("ha",i));
+            toabao.themNV( new NhanVienVanPhong("nam","chuyen vien"));
+            toabao.themNV( new NhaBao("ha",i));
         }
         toabao.thongtin();
 
 
         System.out.print("\n-----------------------\n");
+
         //sa thai:
-        toabao.ds = toabao.saThaiNhanVien();
+        toabao.saThaiNhanVien();
         toabao.thongtin();
 
         //In Nha bao va nhan vien rieng:
