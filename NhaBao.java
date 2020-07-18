@@ -4,6 +4,7 @@ class NhaBao extends NhanVien{
     int sobd; // so bai dang cua nha bao
 
     NhaBao(){}
+
     NhaBao (String ten, int sbd){
         super(ten);
         sobd = sbd;
@@ -15,13 +16,24 @@ class NhaBao extends NhanVien{
         System.out.print("\n\tLoai nhan vien: Nha bao");
         System.out.print("\n\tSo bai dang: "+sobd);
     }
+
+    //in kieu 2:
     public void inThongTin() {
         super.inThe();
         System.out.print("\n\tSo bai dang: "+sobd);
     }
 
     // get, set:
-    public int getSoBaiDang() {return sobd;}
-    public void setSoBaiDang( int so) {sobd = so;}
+    int getSoBaiDang() {
+        return sobd;
+    }
+
+    void setSoBaiDang( int so) {
+        sobd = so;
+    }
+
+    String getChucVu() {
+        return null;
+    }
 
 }
