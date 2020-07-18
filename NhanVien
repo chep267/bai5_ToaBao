@@ -1,9 +1,10 @@
 package toa_bao;
 
-public abstract class NhanVien {
+abstract class NhanVien {
     String name; //ten Nhan vien
 
     NhanVien(){}
+
     NhanVien(String st){
         name = st;
     }
@@ -13,10 +14,9 @@ public abstract class NhanVien {
         System.out.print("\n\tHo ten: "+name);
     }
 
-    public void inThongTin() {
-    }
+    //public void inThongTin() {}
+    
     // get, set:
-    public int getSoBaiDang() {return -1;}
-    public String getChucVu() {return null;}
-
+     abstract int getSoBaiDang();
+     abstract String getChucVu();
 }
