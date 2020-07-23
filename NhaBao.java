@@ -1,6 +1,7 @@
-package toa_bao;
+package toabao;
 
 class NhaBao extends NhanVien{
+
     int sobd; // so bai dang cua nha bao
 
     NhaBao(){}

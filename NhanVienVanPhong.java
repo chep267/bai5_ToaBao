@@ -1,6 +1,7 @@
-package toa_bao;
+package toabao;
 
 class NhanVienVanPhong extends NhanVien{
+
     String chucvu; //Chuc vu cua nhan vien
 
     NhanVienVanPhong(){}
@@ -25,11 +26,11 @@ class NhanVienVanPhong extends NhanVien{
 
 
     // get, set:
-    
+
     String getChucVu() {return chucvu;}
-    
+
     void setChucVu( String cv) {chucvu = cv;}
-    
+
     int getSoBaiDang() {
         return -1;
     }
