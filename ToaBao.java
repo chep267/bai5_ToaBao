@@ -5,11 +5,13 @@ import java.util.Scanner;
 import java.lang.*;
 
 public class ToaBao {
+
     String tenTB; //ten toa bao
 
     ArrayList<NhanVien> ds = new ArrayList<NhanVien>(); // Danh sach nhan vien
 
-    ToaBao(){}
+    ToaBao() {}
+
     ToaBao (String st){
         tenTB = st;
     }
@@ -17,7 +19,7 @@ public class ToaBao {
 
     //Them Nhan vien:
     //tu tao:
-    public NhanVien themNV(){
+    public NhanVien themNV() {
         Scanner sc = new Scanner(System.in);
         String bodem;
         String ten; int sbd; String cv;
@@ -25,10 +27,10 @@ public class ToaBao {
         do{
             System.out.print("\nHay chon: \n\t1.Them nha bao           2.Them nhan vien        :   ");
             chon = sc.nextInt(); bodem = sc.nextLine();
-            if(chon!=1 && chon!=2){
+            if(chon!=1 && chon!=2) {
                 System.out.print("\nHay chon lai! ");
             }
-        }while (chon!=1 && chon!=2);
+        } while (chon!=1 && chon!=2);
 
         if(chon==1){
             System.out.print("\nNhap ten: ");
@@ -39,7 +41,7 @@ public class ToaBao {
             NhanVien a = new NhaBao(ten, sbd);
             return a;
         }
-        else if(chon==2){
+        else if(chon==2) {
             System.out.print("\nNhap ten: ");
             ten = sc.nextLine();
             System.out.print("\nNhap chuc vu: ");
@@ -52,15 +54,12 @@ public class ToaBao {
     }
 
     //them auto:
-    void themNV(NhanVien a){
+    void themNV(NhanVien a) {
         ds.add(a);
     }
 
-
-
-
     //Sa thai:
-    void saThaiNhanVien(){
+    void saThaiNhanVien() {
         Scanner sc = new Scanner(System.in);
         int dem =0; String bodem; String ten; int vt=0;
         do {
@@ -71,7 +70,7 @@ public class ToaBao {
                     dem++;
                 }
             }
-            if(dem==0){
+            if( dem==0 ) {
                 System.out.print("\nKhong co nhan vien ban vua nhap! Xin hay chon lai! ");
             }else{
                 System.out.print("\nCo "+dem+" nhan vien ten "+ten+" o cac vi tri thu ");
@@ -91,29 +90,31 @@ public class ToaBao {
                             }
                         }
                     }
-                    if(flag == false){
+                    if( flag == false ) {
                         System.out.print("\nkhong co, hay chon lai! ");
                     }
 
-                }while (flag == false);
+                } while ( flag == false );
                 ds.remove(vt-1);
                 System.out.print("\nDone! Ban da xoa nhan vien thu "+vt+" :"+ten);
             }
-        }while (dem==0);
+        } while (dem==0);
     }
 
 
     // bo sung:
-    public void bosung(){
+    public void bosung() {
         ds.add(themNV());
     }
 
 
     //Thong tin toa bao:
-    public void thongtin(){
+    public void thongtin() {
+
         System.out.print("\nTen toa bao : "+tenTB );
         System.out.print("\nSo nhan vien: "+ds.size() );
-        for(int i=0; i<ds.size(); i++){
+
+        for(int i=0; i<ds.size(); i++) {
             System.out.print("\nNhan vien : "+(i+1));
             ds.get(i).inThe();
         }
@@ -121,11 +122,13 @@ public class ToaBao {
 
 
     //In danh sach nha bao:
-    public void inNhaBao(){
+    public void inNhaBao() {
+
         int i=1;
         System.out.print("\nDanh sach nha bao la: ");
-        for(NhanVien nv : ds){
-            if(nv.getSoBaiDang()>=0){
+
+        for(NhanVien nv : ds) {
+            if( nv.getSoBaiDang()>=0 ) {
                 System.out.print("\nNha bao "+(i++)+" : ");
                 nv.inThongTin();
             }
@@ -133,11 +136,12 @@ public class ToaBao {
     }
 
     //In danh sach nhan vien:
-    public void inNhanVien(){
+    public void inNhanVien() {
+
         System.out.print("\nDanh sach nhan vien van phong la: ");
         int i=1;
-        for(NhanVien nv : ds){
-            if(nv.getChucVu()!=null){
+        for( NhanVien nv : ds ) {
+            if( nv.getChucVu()!=null ) {
                 System.out.print("\nNhan Vien "+(i++)+" : ");
                 nv.inThongTin();
             }

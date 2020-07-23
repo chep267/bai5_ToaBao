@@ -1,12 +1,12 @@
 package toabao;
 
-class NhanVienVanPhong extends NhanVien{
+class NhanVienVanPhong extends NhanVien {
 
     String chucvu; //Chuc vu cua nhan vien
 
     NhanVienVanPhong(){}
 
-    NhanVienVanPhong (String ten, String cv){
+    NhanVienVanPhong (String ten, String cv) {
         super(ten);
         chucvu = cv;
     }

@@ -4,7 +4,7 @@ abstract class NhanVien {
 
     String name; //ten Nhan vien
 
-    NhanVien(){}
+    NhanVien() {}
 
     NhanVien(String st){
         name = st;

@@ -3,7 +3,7 @@ package toabao;
 import java.util.Scanner;
 
 public class TestTaoBao {
-    
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -15,7 +15,7 @@ public class TestTaoBao {
 
 
         //Khoi tao nhan vien:
-        for (int i=0; i<6; i=i+2){
+        for (int i=0; i<6; i=i+2) {
             toabao.themNV( new NhanVienVanPhong("nam","chuyen vien"));
             toabao.themNV( new NhaBao("ha",i));
         }

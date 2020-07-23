@@ -1,12 +1,12 @@
 package toabao;
 
-class NhaBao extends NhanVien{
+class NhaBao extends NhanVien {
 
     int sobd; // so bai dang cua nha bao
 
-    NhaBao(){}
+    NhaBao() {}
 
-    NhaBao (String ten, int sbd){
+    NhaBao (String ten, int sbd) {
         super(ten);
         sobd = sbd;
     }
