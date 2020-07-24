@@ -18,7 +18,4 @@ abstract class NhanVien {
     public void inThongTin() {
     }
 
-    // get, set:
-     abstract int getSoBaiDang( );
-     abstract String getChucVu( );
 }
