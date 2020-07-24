@@ -6,13 +6,13 @@ abstract class NhanVien {
 
     NhanVien() {}
 
-    NhanVien(String st){
+    NhanVien(String st) {
         name = st;
     }
 
     //In the nhan vien
-    public void inThe(){
-        System.out.print("\n\tHo ten: "+name);
+    public void inThe() {
+        System.out.println("\tHo ten: " + name);
     }
 
     public void inThongTin() {
