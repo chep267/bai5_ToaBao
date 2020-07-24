@@ -14,22 +14,26 @@ class NhanVienVanPhong extends NhanVien {
     @Override
     public void inThe() {
         super.inThe();
-        System.out.print("\n\tLoai nhan vien: Nhan vien van phong");
-        System.out.print("\n\tChuc vu: " + chucvu);
+        System.out.println("\tLoai nhan vien: Nhan vien van phong");
+        System.out.println("\tChuc vu: " + chucvu);
     }
 
     //in kieu 2:
     public void inThongTin() {
         super.inThe();
-        System.out.print("\n\tChuc vu: " + chucvu);
+        System.out.println("\tChuc vu: " + chucvu);
     }
 
 
     // get, set:
 
-    String getChucVu() {return chucvu;}
+    String getChucVu() {
+        return chucvu;
+    }
 
-    void setChucVu( String cv) {chucvu = cv;}
+    void setChucVu( String cv) {
+        chucvu = cv;
+    }
 
     int getSoBaiDang() {
         return -1;
