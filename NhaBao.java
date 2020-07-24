@@ -14,14 +14,14 @@ class NhaBao extends NhanVien {
     @Override
     public void inThe() {
         super.inThe();
-        System.out.print("\n\tLoai nhan vien: Nha bao");
-        System.out.print("\n\tSo bai dang: "+sobd);
+        System.out.println("\tLoai nhan vien: Nha bao");
+        System.out.println("\tSo bai dang: " + sobd);
     }
 
     //in kieu 2:
     public void inThongTin() {
         super.inThe();
-        System.out.print("\n\tSo bai dang: "+sobd);
+        System.out.print("\n\tSo bai dang: " + sobd);
     }
 
     // get, set:
